@@ -1,8 +1,4 @@
-// TODO: add and export your own actions
 import cities from '../data/cities'
-
-// const city = { name: "Paris", address: "16 Villa Gaudelet, 75011 Paris", slug: "paris" };
-
 
 export function setCities() {
     return { 

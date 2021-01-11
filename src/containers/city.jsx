@@ -4,10 +4,6 @@ import { connect } from 'react-redux';
 import { selectCity } from '../actions';
 
 class City extends Component {
-    componentWillMount() {
-        this.props.selectCity();
-    }
-
     handleClick = (event) => {
         this.props.selectCity(this.props.city)
     };
@@ -27,11 +23,5 @@ function mapDispatchToProps(dispatch) {
         dispatch
     ); 
 }
-
-function mapStateToProps(state) {
-    return {
-        activeCity: state.activeCity
-    };
-}
     
-export default connect(mapStateToProps, mapDispatchToProps)(City);
+export default connect(null, mapDispatchToProps)(City);

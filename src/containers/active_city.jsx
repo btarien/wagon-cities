@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux'; 
 import { connect } from 'react-redux'; 
-import { selectCity } from '../actions';
 
 class ActiveCity extends Component {
-    componentWillMount() {
-        this.props.selectCity();
-    }
-
     render() {
         if (this.props.activeCity) {
             const imgUrl = `https://kitt.lewagon.com/placeholder/cities/${this.props.activeCity.slug}`
@@ -27,17 +21,10 @@ class ActiveCity extends Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(
-        { selectCity: selectCity },
-        dispatch
-    ); 
-}
-
 function mapStateToProps(state) {
     return {
         activeCity: state.activeCity
     };
 }
     
-export default connect(mapStateToProps, mapDispatchToProps)(ActiveCity);
+export default connect(mapStateToProps)(ActiveCity);
